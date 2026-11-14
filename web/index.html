@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Concat Web</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+  <strong class="brand">Concat</strong><span class="tag">web</span>
+  <button id="new">New</button>
+  <button id="open">Open project…</button>
+  <button id="save">Save concat.json</button>
+  <span class="sp"></span>
+  <button id="undo" disabled>Undo</button>
+  <button id="redo" disabled>Redo</button>
+  <button id="export">Export</button>
+</header>
+<main>
+  <aside id="bin">
+    <h2>Media</h2>
+    <label class="drop" id="drop">Drop files or <u>choose</u>
+      <input id="file" type="file" accept="video/*,audio/*,image/*" multiple hidden></label>
+    <ul id="media"></ul>
+    <button id="addText">+ Title</button>
+    <button id="addTrack">+ Track</button>
+    <div id="missing" hidden></div>
+  </aside>
+  <section id="stage">
+    <canvas id="preview" width="1280" height="720"></canvas>
+    <div class="transport">
+      <button id="play">Play</button>
+      <button id="split">Split (S)</button>
+      <button id="del">Delete</button>
+      <span id="clock">0:00.00</span>
+      <label>Zoom <input id="zoom" type="range" min="10" max="300" value="80"></label>
+    </div>
+  </section>
+  <aside id="inspector"><h2>Clip</h2><div id="props">Select a clip.</div></aside>
+</main>
+<section id="timeline"><div id="ruler"></div><div id="lanes"></div><div id="playhead"></div></section>
+<div id="toast" hidden></div>
+<script type="module" src="app.js"></script>
+</body>
+</html>
